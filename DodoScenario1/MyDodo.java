@@ -90,6 +90,7 @@ public class MyDodo extends Dodo
         while ( nrStepsTaken < distance ) { // check if more steps must be taken  
             move();                         // take a step
             nrStepsTaken++;                 // increment the counter
+            System.out.println("moved " + nrStepsTaken); 
         }
     }
 
@@ -107,6 +108,7 @@ public class MyDodo extends Dodo
     public void walkToWorldEdgePrintingCoordinates( ){
         while( ! borderAhead() ){
             // print coordinates
+            
             move();
         }
     }
