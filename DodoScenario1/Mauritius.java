@@ -237,5 +237,8 @@ public class Mauritius extends World
         blueEgg.setLocation(7,6);
         myDodo.setLocation(0,0);
         blueEgg.setLocation(5,5);
+        myDodo.setLocation(4,8);
+        Fence fence = new Fence();
+        addObject(fence,6,8);
     }
 }
