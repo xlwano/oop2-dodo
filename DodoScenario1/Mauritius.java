@@ -240,5 +240,6 @@ public class Mauritius extends World
         myDodo.setLocation(4,8);
         Fence fence = new Fence();
         addObject(fence,6,8);
+        myDodo.setLocation(1,5);
     }
 }
