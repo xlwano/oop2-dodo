@@ -146,6 +146,14 @@ public class MyDodo extends Dodo
             }
         }
     }
+    
+    public void stepOneCellBackwards() {
+        if ( canMove()) {
+        turn180();
+        move();
+        turn180();
+    }
+    }
 
     /**
      * Test if Dodo can lay an egg.
@@ -190,14 +198,10 @@ public class MyDodo extends Dodo
     public boolean grainAhead() {
         move();
         if (onGrain()) {
-            turn180(); 
-            move(); 
-            turn180();
+            stepOneCellBackwards();
             return true;
         } else {
-            turn180(); 
-            move();
-            turn180();
+            stepOneCellBackwards();
             return false;
         }
     }
