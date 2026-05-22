@@ -241,5 +241,13 @@ public class Mauritius extends World
         Fence fence = new Fence();
         addObject(fence,6,8);
         myDodo.setLocation(1,5);
+        myDodo.setLocation(1,4);
+        Grain grain = new Grain();
+        addObject(grain,3,3);
+        Grain grain2 = new Grain();
+        addObject(grain2,6,3);
+        Grain grain3 = new Grain();
+        addObject(grain3,9,3);
+        myDodo.setLocation(1,3);
     }
 }

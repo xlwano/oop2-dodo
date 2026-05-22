@@ -135,6 +135,17 @@ public class MyDodo extends Dodo
         walkToWorldEdge();
         turn180();
     }
+    
+    public void pickUpGrainsAndPrintCoordinates() {
+        while ( ! borderAhead()) {
+            if(onGrain()) {
+                pickUpGrain();
+                System.out.println(getX() + " , "+ getY());
+            } else { 
+                move(); 
+            }
+        }
+    }
 
     /**
      * Test if Dodo can lay an egg.
