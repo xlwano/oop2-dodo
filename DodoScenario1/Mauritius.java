@@ -249,5 +249,11 @@ public class Mauritius extends World
         Grain grain3 = new Grain();
         addObject(grain3,9,3);
         myDodo.setLocation(1,3);
+        removeObject(myDodo);
+        removeObject(grain);
+        removeObject(grain2);
+        removeObject(grain3);
+        removeObject(blueEgg);
+        removeObject(fence);
     }
 }
