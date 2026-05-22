@@ -123,6 +123,12 @@ public class MyDodo extends Dodo
         }
     }
     }
+    
+    public void walkToWorldEdge() { 
+        while( ! borderAhead()) {
+            move();
+        }
+    }
 
     /**
      * Test if Dodo can lay an egg.
