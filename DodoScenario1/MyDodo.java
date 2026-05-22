@@ -118,9 +118,10 @@ public class MyDodo extends Dodo
             
             if(fenceAhead()) {
                 climbOverFence();
-            }
-            move();
+            } else { 
+                move(); 
         }
+    }
     }
 
     /**
