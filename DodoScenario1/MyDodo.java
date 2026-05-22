@@ -147,6 +147,19 @@ public class MyDodo extends Dodo
         }
     }
     
+    public void goToWorldEdgeAndLayEggs() {
+        while (!borderAhead()) {
+            if(onNest() && canLayEgg()){
+                layEgg();
+            } 
+            move();
+        
+        }
+        if(onNest() && canLayEgg()){
+                layEgg();
+            }
+    }
+    
     public void stepOneCellBackwards() {
         if ( canMove()) {
         turn180();
