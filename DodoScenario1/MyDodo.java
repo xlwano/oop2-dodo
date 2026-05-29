@@ -271,4 +271,15 @@ public class MyDodo extends Dodo
         }
     }
     }
+    
+    public void solveMaze() {
+                while(!onNest()) {
+            if(canMove()) {
+                move();
+                turnLeft();
+            } else {
+                turnRight();
+            }
+        }
+    }
 }
