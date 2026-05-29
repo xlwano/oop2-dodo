@@ -319,4 +319,21 @@ public boolean validCoordinates(int x, int y) {
 public boolean locationReached(int x, int y) {
     return getX() == x && getY() == y;
 }
+
+public int countEggsInRow() {
+    int eggCount = 0;
+        if (onEgg()) {
+    eggCount++;
+    }
+    while (!borderAhead()) {
+    move();
+    if (onEgg()) {
+    eggCount++;
+    }
+    }
+    goBackToStartOfRowAndFaceBack();
+    showCompliment("Aantal eieren: " + eggCount);
+    return eggCount;
+}
+
 }
