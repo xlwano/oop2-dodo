@@ -285,4 +285,28 @@ public class MyDodo extends Dodo
             }
         }
     }
+    
+    public void goToLocation(int coordX, int coordY) {
+    if((coordX >= 0 && coordX <= 11) && (coordY >= 0 && coordY <=11)) { 
+        while (!locationReached(coordX, coordY)) {
+        if (getX() < coordX) {
+            faceDirection(EAST);
+            move();
+        } else if (getX() > coordX) {
+            faceDirection(WEST);
+            move();
+        } else if (getY() < coordY) {
+            faceDirection(SOUTH);
+            move();
+        } else if (getY() > coordY) {
+            faceDirection(NORTH);
+            move();
+        }
+    }
+}
+}
+
+public boolean locationReached(int x, int y) {
+    return getX() == x && getY() == y;
+}
 }

@@ -16,7 +16,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class Mauritius extends World
 {
-    private static final String WORLD_NAME = "worldMazeLevel2c.txt";
+    private static final String WORLD_NAME = "worldEmpty.txt";
     private static File WORLD_FILE = null;
 
     private static final int MAXWIDTH = 10, MAXHEIGHT = 10, CELLSIZE = 60;
@@ -255,5 +255,7 @@ public class Mauritius extends World
         removeObject(grain3);
         removeObject(blueEgg);
         removeObject(fence);
+        MyDodo myDodo2 = new MyDodo();
+        addObject(myDodo2,3,5);
     }
 }
