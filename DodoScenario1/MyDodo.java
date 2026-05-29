@@ -280,6 +280,9 @@ public class MyDodo extends Dodo
             } else {
                 turnRight();
             }
+            if(onNest()) {
+                showCompliment("Good Job!!");
+            }
         }
     }
 }
