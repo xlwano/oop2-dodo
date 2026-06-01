@@ -336,4 +336,10 @@ public int countEggsInRow() {
     return eggCount;
 }
 
+public void layTrailOfEggs(int n) {
+    for (int i = 0; i < n; i++) {
+        move();
+        layEgg();
+    }
+}
 }
