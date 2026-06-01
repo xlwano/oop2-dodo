@@ -342,4 +342,20 @@ public void layTrailOfEggs(int n) {
         layEgg();
     }
 }
+
+public int countEggsInWorld() {
+    int totalEggCount = 0;
+    int row = 0;
+    int height = getWorld().getHeight();
+    while(row < height) {
+    goToLocation(0,row);
+    faceDirection(1);
+    int eggCount = countEggsInRow();
+    totalEggCount = totalEggCount + eggCount;
+    row++;
+}
+    goToLocation(0, 0);
+    faceDirection(1);
+    return totalEggCount;
+}
 }
