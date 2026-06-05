@@ -391,7 +391,6 @@ public void eggMonument() {
     int x = getX();
     int y = getY();
     int row = 0;
-
     while (y + row < getWorld().getHeight() && x + row < getWorld().getWidth()) {
         goToLocation(x, y + row);
         faceDirection(1);
@@ -410,16 +409,34 @@ public void solidMonument() {
     int y = getY();
     int eggs = 1;
     int row = 0;
-
     while (y + row < getWorld().getHeight() && x + row <= getWorld().getWidth()) {
         goToLocation(x, y + row);
         faceDirection(1);
         for (int i = 0; i < eggs; i++) {
             layEgg();
-            if (i < eggs - 1) move();
+            if (i < eggs - 1) { 
+                move(); 
+            }
         }
         row++;
         eggs = eggs * 2;
     }
 }
+
+public void eggPyramid() {
+    int x = getX();
+    int y = getY();
+    int aantalRijen = getWorld().getHeight() - y;
+
+    for (int rij = 0; rij < aantalRijen; rij++) {
+        for (int kolom = -rij; kolom <= rij; kolom++) {
+            goToLocation(x + kolom, y + rij);
+            if (canLayEgg()) {
+                layEgg();
+            }
+        }
+    }
+
+    goToLocation(x, y);
+ }
 }
