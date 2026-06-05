@@ -365,7 +365,6 @@ public void searchRowWithMostEggs() {
     int bestRow = 0;
     int bestCount = 0;
     boolean equalEggCount = false;
-
     while (row < height) {
         goToLocation(0, row);
         faceDirection(1);
@@ -385,6 +384,24 @@ public void searchRowWithMostEggs() {
         System.out.println("There are multiple rows with " + bestCount + " eggs.");
     } else {
         System.out.println("Row with most eggs: " + bestRow + " (" + bestCount + ")");
+    }
+}
+
+public void eggMonument() {
+    int x = getX();
+    int y = getY();
+    int row = 0;
+
+    while (y + row < getWorld().getHeight() && x + row < getWorld().getWidth()) {
+        goToLocation(x, y + row);
+        faceDirection(EAST);
+        for (int i = 0; i <= row; i++) {
+            layEgg();
+            if (i < row) { 
+                move();
+            }
+        }
+        row++;
     }
 }
 }

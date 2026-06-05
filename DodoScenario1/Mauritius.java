@@ -305,5 +305,7 @@ public class Mauritius extends World
         removeObject(blueEgg7);
         removeObject(blueEgg6);
         removeObject(blueEgg8);
+        removeObject(blueEgg11);
+        myDodo2.setLocation(4,7);
     }
 }
