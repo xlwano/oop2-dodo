@@ -457,4 +457,8 @@ public void eggPyramid() {
     faceDirection(1);
     return average;
 }
+
+public void parityBitAlgorithm () {
+    
+}
 }
