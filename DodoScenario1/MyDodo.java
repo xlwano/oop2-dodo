@@ -459,6 +459,33 @@ public void eggPyramid() {
 }
 
 public void parityBitAlgorithm () {
-    
+        int worldHeight = getWorld().getHeight();
+        int worldWidth = getWorld().getWidth();
+        int savedX = -1;
+        int savedY = -1;
+        for(int i = 0; i < worldHeight; i++) {
+            goToLocation(0, i);
+            faceDirection(EAST);
+            if(countEggsInRow() % 2 != 0) {
+                savedY = i;
+                System.out.println(savedY);
+            }
+        }
+        
+        for(int i = 0; i < worldWidth; i++) {
+            goToLocation(i, 0);
+            faceDirection(SOUTH);
+            if(countEggsInRow() % 2 != 0) {
+                savedX = i;
+                System.out.println(savedX);
+            }
+        }
+        
+        if (savedX != -1 && savedY != -1) {
+            goToLocation(savedX, savedY);
+            if(canLayEgg()) {
+                layEgg();
+            }
+        }
 }
 }
