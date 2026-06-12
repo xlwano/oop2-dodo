@@ -529,6 +529,7 @@ public void parityBitAlgorithmWithoutDirection() {
         int worldWidth = getWorld().getWidth();
         int savedX = -1;
         int savedY = -1;
+        
         for(int i = 0; i < worldHeight; i++) {
             goToLocation(0,i);
             faceDirection(1);
