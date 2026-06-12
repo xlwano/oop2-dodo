@@ -487,5 +487,72 @@ public void parityBitAlgorithm () {
                 layEgg();
             }
         }
+    } 
+    
+public int direction() {
+        int previousX = getX();
+        int previousY = getY();
+        int direction = -1;
+        
+        if(borderAhead()) {
+            stepOneCellBackwards();
+            previousX = getX();
+            previousY = getY();
+            move();
+            if(previousX < getX()) {
+                direction = 1;
+            } else if(previousX > getX()) {
+                direction = 3;
+            } else if(previousY < getY()) {
+                direction = 2;
+            } else if(previousY > getY()){
+                direction = 0;
+            }
+        } else {
+            move();
+            if(previousX < getX()) {
+                direction = 1;
+            } else if(previousX > getX()) {
+                direction = 3;
+            } else if(previousY < getY()) {
+                direction = 2;
+            } else if(previousY > getY()){
+                direction = 0;
+            }
+            stepOneCellBackwards();
+        }
+        return direction;
+    }
+    
+public void parityBitAlgorithmWithoutDirection() {
+        int worldHeight = getWorld().getHeight();
+        int worldWidth = getWorld().getWidth();
+        int savedX = -1;
+        int savedY = -1;
+        for(int i = 0; i < worldHeight; i++) {
+            goToLocation(0,i);
+            faceDirection(1);
+            if(countEggsInRow() % 2 != 0) {
+                savedY = i;
+                System.out.println(savedY);
+            }
+        }
+        
+        for(int i = 0; i < worldWidth; i++) {
+            goToLocation(i,0);
+            faceDirection(2);
+            if(countEggsInRow() % 2 != 0) {
+                savedX = i;
+                System.out.println(savedX);
+            }
+        }
+        
+        if (savedX != -1 && savedY != -1) {
+            goToLocation(savedX, savedY);
+            if(canLayEgg()) {
+                layEgg();
+            }
+        }
+    }
 }
-}
+
