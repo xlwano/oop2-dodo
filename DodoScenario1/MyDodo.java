@@ -584,9 +584,9 @@ public void parityBitAlgorithmWithoutDirection() {
     public void practiceWithListsOfSurpriseEggs( ){
         List<SurpriseEgg>  listOfEgss = SurpriseEgg.generateListOfSurpriseEggs( 12, getWorld() );
     }
-    
-    public void makeListOfSurpriseEgg() {
-        
+   
+        public List<SurpriseEgg> makeListOfSurpriseEggs() {
+        return SurpriseEgg.generateListOfSurpriseEggs(10, getWorld());
     }
 }
 

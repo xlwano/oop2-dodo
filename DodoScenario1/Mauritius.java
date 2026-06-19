@@ -348,5 +348,7 @@ public class Mauritius extends World
         removeObject(goldenEgg3);
         removeObject(goldenEgg4);
         removeObject(myDodo2);
+        MyDodo myDodo3 = new MyDodo();
+        addObject(myDodo3,3,5);
     }
 }
